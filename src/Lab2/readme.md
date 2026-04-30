@@ -59,16 +59,17 @@ Algorithm findMax(A)
     create priority_queue queue with order = descending
     for each element x in A:
         insert x into queue
+       
     remove top element from queue
     remove top element from queue
     return top element of queue
 ```
 
-|             | Average case | Worst case | Worst case |
-|:------------|:------------:|-----------:|-----------:|
-| Algorithm 1 |     O(N)     |       O(N) |       O(N) |
-| Algorithm 2 |     O(N)     |       O(N) |       O(N) |
-| Algorithm 3 |  O(N logN)   |  O(N logN) |  O(N logN) |
+|             | Best case | Average case | Worst case |
+|:------------|:---------:|-------------:|-----------:|
+| Algorithm 1 |   O(N)    |         O(N) |       O(N) |
+| Algorithm 2 |   O(N)    |         O(N) |       O(N) |
+| Algorithm 3 | O(N logN) |    O(N logN) |  O(N logN) |
 
 
 ## Question 2
