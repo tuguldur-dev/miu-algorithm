@@ -72,16 +72,19 @@ Algorithm findMax(A)
 
 
 ## Question 2
-| 10,1         | O(1)          |
-|:-------------|:--------------|
-| log n        | O(log n)      |
-| n<sup>1/3    | O(n<sup>1/3)  |
-| n<sup>1/2    | O(n<sup>1/2)  |
-| log(log n)   | O(log(log n)) |
-| log(n<sup>n) | O(n)          |
-| n log n      | O(n log n)    |
-| n<sup>2      | O(n<sup>2)    |
-| n<sup>3      | O(n<sup>3)    |
-| 2<sup>n      | O(2<sup>n)    |
-| 3<sup>n      | O(3<sup>n)    |
-| n<sup>n      | O(n<sup>n)    |
+| 10,1                  | O(1)                     |
+|:----------------------|:-------------------------|
+| log(log n)            | O(log(log n))            |
+| ln n, log n           | O(log n)                 |
+| n<sup>1/k k > 3       | O(n<sup>1/k)             |
+| n<sup>1/3             | O(n<sup>1/3)             |
+| n<sup>1/3 log n       | O(n<sup>1/3</sup> log n) |
+| n<sup>1/2             | O(n<sup>1/2)             |
+| n<sup>1/2</sup> log n | O(n<sup>1/2</sup> log n) |
+| n log n, log(n<sup>n) | O(n log n)               |
+| n<sup>2               | O(n<sup>2)               |
+| n<sup>3               | O(n<sup>3)               |
+| 2<sup>n               | O(2<sup>n)               |
+| 3<sup>n               | O(3<sup>n)               |
+| n!                    | O(n!)                    |
+| n<sup>n               | O(n<sup>n)               |
