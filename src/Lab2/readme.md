@@ -68,7 +68,7 @@ Algorithm findMax(A)
 |:------------|:------------:|-----------:|-----------:|
 | Algorithm 1 |     O(N)     |       O(N) |       O(N) |
 | Algorithm 2 |     O(N)     |       O(N) |       O(N) |
-| Algorithm 3 |     O(N)     |       O(N) |       O(N) |
+| Algorithm 3 |  O(N logN)   |  O(N logN) |  O(N logN) |
 
 
 ## Question 2
