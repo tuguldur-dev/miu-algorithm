@@ -83,5 +83,5 @@ Algorithm findMax(A)
 | n<sup>2      | O(n<sup>2)    |
 | n<sup>3      | O(n<sup>3)    |
 | 2<sup>n      | O(2<sup>n)    |
-| 3<sup>n      | 3(2<sup>n)    |
+| 3<sup>n      | O(3<sup>n)    |
 | n<sup>n      | O(n<sup>n)    |
