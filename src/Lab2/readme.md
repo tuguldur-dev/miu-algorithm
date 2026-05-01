@@ -71,6 +71,8 @@ Algorithm findMax(A)
 | Algorithm 2 |   O(N)    |         O(N) |       O(N) |
 | Algorithm 3 | O(N logN) |    O(N logN) |  O(N logN) |
 
+![Comparison chart](./benchmark.png)
+
 
 ## Question 2
 | 10,1                  | O(1)                     |
