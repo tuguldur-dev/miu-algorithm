@@ -13,21 +13,33 @@ public class Main {
         IO.println("Not found");
     }
 
-    static void DACSearchRecursive(int[][] array, int rowStart, int rowEnd, int colStart, int colEnd, int key) {
-        int midRow = (rowStart + rowEnd) / 2;
-        int midCol = (colStart + colEnd) / 2;
-
-        if (array[midRow][midCol] == key) {
-            IO.println(key + "=[" + midRow + ":" + midCol + "]");
-        } else if (array[midRow][midCol] < key) {
-            DACSearchRecursive(array, midRow, rowEnd, midCol, colEnd, key);
-        } else {
-            DACSearchRecursive(array, rowStart, midRow, colStart, midRow, key);
+    static boolean DACSearchRecursive(int[][] array, int rowStart, int rowEnd, int colStart, int colEnd, int key) {
+        if (rowStart > rowEnd || colStart > colEnd) {
+            return false;
         }
+        int rowMid = (rowStart + rowEnd) / 2;
+        int colMid = (colStart + colEnd) / 2;
+        int mid = array[rowMid][colMid];
+
+        if (mid == key) {
+            IO.println(key + "=[" + rowMid + ":" + colMid + "]");
+            return true;
+        }
+        if (key < mid) {
+            return DACSearchRecursive(array, rowStart, rowMid - 1, colStart, colMid - 1, key) ||
+                    DACSearchRecursive(array, rowStart, rowMid - 1, colMid, colEnd, key) ||
+                    DACSearchRecursive(array, rowMid, rowEnd, colStart, colMid - 1, key);
+        }
+        return DACSearchRecursive(array, rowMid + 1, rowEnd, colStart, colMid, key) ||
+                DACSearchRecursive(array, rowMid + 1, rowEnd, colMid + 1, colEnd, key) ||
+                DACSearchRecursive(array, rowStart, rowMid, colMid + 1, colEnd, key);
     }
 
     static void DACsearchSS(int[][] array, int key) {
-        DACSearchRecursive(array, 0, array.length-1, 0, array.length-1, key);
+        boolean check = DACSearchRecursive(array, 0, array.length - 1, 0, array.length - 1, key);
+        if(!check) {
+            IO.println("Not found");
+        }
     }
 
 
