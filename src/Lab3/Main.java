@@ -13,8 +13,21 @@ public class Main {
         IO.println("Not found");
     }
 
-    static void DACsearchSS(int[][] array, int key) {
+    static void DACSearchRecursive(int[][] array, int rowStart, int rowEnd, int colStart, int colEnd, int key) {
+        int midRow = (rowStart + rowEnd) / 2;
+        int midCol = (colStart + colEnd) / 2;
 
+        if (array[midRow][midCol] == key) {
+            IO.println(key + "=[" + midRow + ":" + midCol + "]");
+        } else if (array[midRow][midCol] < key) {
+            DACSearchRecursive(array, midRow, rowEnd, midCol, colEnd, key);
+        } else {
+            DACSearchRecursive(array, rowStart, midRow, colStart, midRow, key);
+        }
+    }
+
+    static void DACsearchSS(int[][] array, int key) {
+        DACSearchRecursive(array, 0, array.length-1, 0, array.length-1, key);
     }
 
 
@@ -77,6 +90,7 @@ public class Main {
         }
 
         searchSS(array, 23);
+        DACsearchSS(array, 23);
         IO.println();
     }
 
