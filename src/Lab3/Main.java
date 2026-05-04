@@ -3,13 +3,17 @@ package Lab3;
 public class Main {
     static void searchSS(int[][] array, int key) {
         for (int i = 0; i < array.length; i++) {
-            for (int k = 0; k < array[i].length; k++) {
-                if (array[i][k] == key) {
-                    IO.println(key + "=[" + i + ":" + k + "]");
-                    return;
+            if (key < array[i][0]) break;
+            if (key <= array[i][array[i].length - 1]) {
+                for (int k = 0; k < array[i].length; k++) {
+                    if (array[i][k] == key) {
+                        IO.println(key + "=[" + i + ":" + k + "]");
+                        return;
+                    }
                 }
             }
         }
+
         IO.println("Not found");
     }
 
@@ -37,7 +41,7 @@ public class Main {
 
     static void DACsearchSS(int[][] array, int key) {
         boolean check = DACSearchRecursive(array, 0, array.length - 1, 0, array.length - 1, key);
-        if(!check) {
+        if (!check) {
             IO.println("Not found");
         }
     }
