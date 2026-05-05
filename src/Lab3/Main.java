@@ -3,7 +3,6 @@ package Lab3;
 public class Main {
     static void searchSS(int[][] array, int key) {
         for (int i = 0; i < array.length; i++) {
-            if (key < array[i][0]) break;
             if (key <= array[i][array[i].length - 1]) {
                 for (int k = 0; k < array[i].length; k++) {
                     if (array[i][k] == key) {
