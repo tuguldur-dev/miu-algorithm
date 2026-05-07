@@ -2,17 +2,19 @@ package Lab3;
 
 public class Main {
     static void searchSS(int[][] array, int key) {
-        for (int i = 0; i < array.length; i++) {
-            if (key <= array[i][array[i].length - 1]) {
-                for (int k = 0; k < array[i].length; k++) {
-                    if (array[i][k] == key) {
-                        IO.println(key + "=[" + i + ":" + k + "]");
-                        return;
-                    }
-                }
+        int n = array.length;
+        int i = 0;
+        int k = n - 1;
+        while (i < n && k >= 0) {
+            if (array[i][k] == key) {
+                IO.println(key + "=[" + i + ":" + k + "]");
+                return;
+            } else if (array[i][k] > key) {
+                k--;
+            } else {
+                i++;
             }
         }
-
         IO.println("Not found");
     }
 
